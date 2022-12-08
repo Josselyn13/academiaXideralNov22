@@ -1,0 +1,19 @@
+
+body{
+	margin: 0 auto;
+	width: 80%;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+#boton-agregar {
+    text-align: right;
+}
+
+.save{
+	width: 100px;
+}
+
+.container_form{
+	width: 50%;
+	margin: 0 auto;
+}

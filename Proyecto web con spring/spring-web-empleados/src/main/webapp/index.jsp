@@ -1,0 +1,1 @@
+<% response.sendRedirect("empleado/list"); %>
