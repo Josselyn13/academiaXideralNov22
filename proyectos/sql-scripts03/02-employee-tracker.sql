@@ -34,11 +34,11 @@ CREATE TABLE `employee` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `customer`
+-- Dumping data for table `employee`
 --
 
 LOCK TABLES `employee` WRITE;
-/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `employee` DISABLE KEYS */;
 
 INSERT INTO `employee` VALUES 
 	(1,'David','Adams','david@luv2code.com'),
@@ -47,7 +47,7 @@ INSERT INTO `employee` VALUES
 	(4,'Mary','Public','mary@luv2code.com'),
 	(5,'Maxwell','Dixon','max@luv2code.com');
 
-/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+/*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
