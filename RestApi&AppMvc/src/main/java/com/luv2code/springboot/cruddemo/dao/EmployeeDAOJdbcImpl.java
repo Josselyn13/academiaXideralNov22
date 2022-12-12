@@ -18,7 +18,7 @@ public class EmployeeDAOJdbcImpl implements EmployeeDAO {
 
 	@Override
 	public List<Employee> findAll() {
-		System.out.println("Implementación DAO con JDBC: " + dataSource);
+		System.out.println("Implementación DAO con JDBC findAll(): " + dataSource);
 
 		List<Employee> listaEmpleados = new ArrayList<>();
 
@@ -53,6 +53,8 @@ public class EmployeeDAOJdbcImpl implements EmployeeDAO {
 
 	@Override
 	public Employee findById(int theId) {
+		
+		System.out.println("Implementación DAO con JDBC findById(): ");
 		Employee theEmployee = null;
 
 		try (Connection myConn = dataSource.getConnection();
@@ -85,6 +87,12 @@ public class EmployeeDAOJdbcImpl implements EmployeeDAO {
 
 	@Override
 	public void save(Employee theEmployee) {
+		System.out.println(theEmployee);
+		
+		//if id=null or 0
+			//insert
+		//else
+		    //update
 	}
 
 	@Override
