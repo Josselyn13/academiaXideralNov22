@@ -87,16 +87,43 @@ public class EmployeeDAOJdbcImpl implements EmployeeDAO {
 
 	@Override
 	public void save(Employee theEmployee) {
-		System.out.println(theEmployee);
-		
-		//if id=null or 0
-			//insert
-		//else
-		    //update
+		String sql = "";
+
+		if (theEmployee.getId() == 0)
+			sql = "insert into employee (first_name, last_name, email) values (?, ?, ?)";
+		else
+			sql = "update employee set first_name=?, last_name=?, email=? where id=?";
+
+		try (Connection myConn = dataSource.getConnection();
+			 PreparedStatement myStmt = myConn.prepareStatement(sql)) {
+
+			myStmt.setString(1, theEmployee.getFirstName());
+			myStmt.setString(2, theEmployee.getLastName());
+			myStmt.setString(3, theEmployee.getEmail());
+
+			if (theEmployee.getId() != 0)
+				myStmt.setInt(4, theEmployee.getId());
+
+			myStmt.execute();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	@Override
 	public void deleteById(int theId) {
+		
+		try (Connection myConn = dataSource.getConnection(); 
+			 PreparedStatement myStmt = myConn.prepareStatement("delete from employee where id=?")) {
+			
+			myStmt.setInt(1, theId);
+			myStmt.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }
