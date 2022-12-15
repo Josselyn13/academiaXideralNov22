@@ -1,0 +1,10 @@
+CREATE USER 'Cliente'@'localhost' IDENTIFIED BY 'Cliente';
+
+GRANT ALL PRIVILEGES ON * . * TO 'Cliente'@'localhost'; 
+
+______________________________________________________________________________________
+
+
+CREATE DATABASE  IF NOT EXISTS `info_clientes` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `info_clientes`;
+
